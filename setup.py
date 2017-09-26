@@ -5,7 +5,7 @@ Notifico is my personal open source MIT replacement to the
 now-defunct http://cia.vc service with my own little spin on things.
 """
 from setuptools import setup, find_packages
-
+from requirements import requirements
 
 def get_version():
     """
@@ -24,30 +24,7 @@ if __name__ == '__main__':
         packages=find_packages(),
         include_package_data=True,
         zip_safe=False,
-        install_requires=[
-            'Flask>=0.12.0',
-            'Flask-WTF==0.8.4',
-            'Flask-Gravatar',
-            'Flask-SQLAlchemy',
-            'Flask-XML-RPC',
-            'Flask-Mail',
-            'Flask-Caching==1.2.0',
-            'fabric',
-            'sqlalchemy',
-            'utopia',
-            'gevent',
-            'oauth2',
-            'redis',
-            'gunicorn',
-            'requests',
-            'pygithub',
-            'xmltodict',
-            'unidecode',
-            'raven',
-            'blinker',
-            'docopt',
-            'celery'
-        ],
+        install_requires=requirements,
         dependency_links=[
             'https://github.com/notifico/utopia/tarball/master#egg=utopia'
         ]
